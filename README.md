@@ -1,5 +1,4 @@
-# _ChatBotAssistance
-<h1 style="color:purple;">_ChatBotAssistance</h1>
+<h1 style="#00FF00;">_ChatBotAssistance</h1>
 React chatbot app that assist platform users and  collects contact information.
 
 
