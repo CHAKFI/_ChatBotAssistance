@@ -1,4 +1,5 @@
 import './App.css';
+import './Chatbot.css'
 import Chatbot from './interface'
 
 function App() {
