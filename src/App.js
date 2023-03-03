@@ -4,9 +4,6 @@ import Chatbot from './interface'
 
 function App() {
   return (
-
-    
-
     <div className="App">
       <Chatbot />
     </div>
