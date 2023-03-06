@@ -1,6 +1,5 @@
 .App {
   /* text-align: center; */
-  background-color: rgb(231, 227, 232);
 }
 
 .divi {
@@ -11,13 +10,23 @@
   overflow: auto;
   border-color: #04AA6D;
   border-style: double;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-align: center;
+  /* font-size: 13px; */
 }
 
 h1 {
   color: aquamarine;
   }
 
-.App-link {
-  color: #61dafb;
-}
+  .App-header {
+    background-color: #dedede;
+    min-height: 93.5vh;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    /* font-size: calc(5px + 1.5vmin); */
+    /* color: white; */
+  }
+
+  

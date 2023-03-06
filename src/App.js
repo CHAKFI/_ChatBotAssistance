@@ -1,13 +1,15 @@
 import './App.css';
-import './Chatbot.css'
+import './xbot.css'
 import Chatbot from './xbot'
 
 function App() {
   return (
     
     <div className="App">
-      <div className="divi"><h1> www.Chatbot.com </h1>  </div>
+      <div className="divi"><h1> www.Chatbot.com </h1></div>
+      <header className="App-header">
       <Chatbot />
+      </header>
     </div>
   );
 }
