@@ -7,7 +7,7 @@
     overflow: hidden;
     margin-left: 35%;
     margin-right: 35%;
-    margin-top: 15%;
+    margin-top: 10%;
     margin-right: 15%
   }
   
@@ -15,6 +15,7 @@
     height: 300px;
     padding: 10px;
     overflow-y: scroll;
+    background-color: white;
   }
   
   .message {
