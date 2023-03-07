@@ -6,7 +6,7 @@ function App() {
   return (
     
     <div className="App">
-      <div className="divi"><h1> www.Chatbot.com </h1></div>
+      <div className="divi"><h1> x-Bot Assistant </h1></div>
       <header className="App-header">
       <Chatbot />
       </header>
