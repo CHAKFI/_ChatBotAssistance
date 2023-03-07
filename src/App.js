@@ -28,22 +28,22 @@ function App() {
                   </tr>
                   <tr>
                     <td>2.</td>
-                    <td>---</td>
+                    <td>Demander les nouvelles</td>
                     <td>ça va ? | comment allez-vous ?</td>
                   </tr>
                   <tr>
                     <td>3.</td>
-                    <td>---</td>
+                    <td>Demander le nom</td>
                     <td>quel est votre nom ? | comment vous vous appelez ?</td>
                     </tr>
                     <tr>
                     <td>4.</td>
-                    <td>---</td>
+                    <td>Demander leur rôle</td>
                     <td>quel est votre rôle ? | comment pouvez vous m'aidez</td>
                   </tr>
                   <tr>
                     <td>5.</td>
-                    <td>---</td>
+                    <td>Fin de conversation</td>
                     <td>au revoir | goodbye</td>
                   </tr>
                 </tbody>

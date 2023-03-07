@@ -21,10 +21,10 @@ function Chatbot(){
           'salut': ['Hey Bonjour!', 'Bonjour à vous !', 'Salut !', 'Bon matin !', 'Bonjour, comment ça va ?'],
           'ça va ?': ['Je vais bien, merci.', 'Ça va bien, et vous ?', 'Je vais très bien, merci. Et vous-même ?','Je me porte bien, merci.','Je vais bien, merci pour demander. Et vous-même ?'],
           'comment allez-vous ?': ['Je vais bien, merci.', 'Ça va bien, et vous ?', 'Je vais très bien, merci. Et vous-même ?','Je me porte bien, merci.','Je vais bien, merci pour demander. Et vous-même ?'],
-          'quel est votre nom ?': ['Je suis Chatbot!', 'je m\'appel Chatbot!', 'Mon nom est Chatbot', 'On m\'appelle Chatbot'],
-          'comment vous vous appelez ?': ['Je suis Chatbot!', 'je m\'appel Chatbot!', 'Mon nom est Chatbot', 'On m\'appelle Chatbot'],
+          'quel est votre nom ?': ['Je suis xbot!', 'je m\'appel xbot!', 'Mon nom est xbot', 'On m\'appelle xbot'],
+          'comment vous vous appelez ?': ['Je suis xbot!', 'je m\'appel xbot!', 'Mon nom est xbot', 'On m\'appelle xbot'],
           'quel est votre rôle ?': ['Je peux vous aidez en répendant à votre questions', 'Je peux vous donnez des informations et des astuces', 'Mon rôle est de fournir un support client basé sur votre demandes', 'En tant qu\'un chatbot je suis votre assistant automatisée'],
-          'comment pouvez vous m\'aidez' : ['Je peux vous aidez en répendant à votre questions', 'Je peux vous donnez des informations et des astuces', 'Mon rôle est de fournir un support client basé sur votre demandes', 'En tant qu\'un chatbot je suis votre assistant automatisée'],
+          'comment pouvez vous m\'aidez ?' : ['Je peux vous aidez en répendant à votre questions', 'Je peux vous donnez des informations et des astuces', 'Mon rôle est de fournir un support client basé sur votre demandes', 'En tant qu\'un chatbot je suis votre assistant automatisée'],
           'au revoir': ['Goodbye!', 'Au revoir !', 'À bientôt !', 'À la prochaine !', 'À plus tard !','Prenez soin de vous !','On se voit bientôt !','À demain !'],
           'goodbye': ['Goodbye!', 'Au revoir !', 'À bientôt !', 'À la prochaine !', 'À plus tard !','Prenez soin de vous !','On se voit bientôt !','À demain !']
         };
