@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+/* eslint-disable jsx-a11y/alt-text */
+import React, { useState, useRef, useEffect } from 'react';
 
 function Chatbot(){
 
     const [chatHistory, setChatHistory] = useState([]);
+    const chatWindowRef = useRef(null);
 
     const handleNewMessage = (message) => {
         const timestamp = new Date().toLocaleTimeString();
@@ -33,12 +35,17 @@ function Chatbot(){
             const rdMessag = Math.floor(Math.random() * mssg.length);
           return `${mssg[rdMessag]}`;
         } else {
-          return `Désolé, je n'ai compris, Pouvez-vous essayer quelque chose d'autre ?`;
+          return `Désolé, je n'ai pas compris, Pouvez-vous essayer quelque chose d'autre ?`;
         }
       };
 
+        useEffect(() => {
+          chatWindowRef.current.scrollIntoView({ behavior: 'smooth' });
+        }, [chatHistory]);
+
     return (
         <div className="chatbot">
+          <div className="chat-head"> <img src="chatbott.png"/>  </div>
             <div className="chat-window">
                 {chatHistory.map((message, index) => (
                     <div 
@@ -49,6 +56,7 @@ function Chatbot(){
                         <div className="message-timestamp">{message.timestamp}</div>
                     </div>
                 ))}
+                <div ref={chatWindowRef}></div>
             </div>
             <form className="input-form" onSubmit={(event) => {
                 event.preventDefault();
