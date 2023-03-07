@@ -66,8 +66,8 @@ function Chatbot(){
             }}
             >
 
-              <input name="chat-input" type="text" placeholder="Type a message..." />
-              <button type="submit" >SEND</button>
+              <input name="chat-input" type="text" placeholder="Ecrire quelque chose..." />
+              <button type="submit" >Envoyer</button>
             </form>
         </div>
     );
