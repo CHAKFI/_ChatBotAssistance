@@ -7,12 +7,16 @@ function Chatbot(){
     const chatWindowRef = useRef(null);
 
     const handleNewMessage = (message) => {
-        const timestamp = new Date().toLocaleTimeString();
-        const newMessage = { text: message, sender: 'user', timestamp };
+      const timestamp = new Date().toLocaleTimeString();
+      const newMessage = { text: message, sender: 'user', timestamp };
+      setChatHistory(prevChatHistory => [...prevChatHistory, newMessage]);
+    
+      setTimeout(() => {
         const response = generateResponse(message);
         const responseMessage = { text: response, sender: 'bot', timestamp };
-        setChatHistory([...chatHistory, newMessage, responseMessage]);
-    }; 
+        setChatHistory(prevChatHistory => [...prevChatHistory, responseMessage]);
+      }, 600);
+    };
 
 
     const generateResponse = (message) => {
@@ -43,10 +47,14 @@ function Chatbot(){
           chatWindowRef.current.scrollIntoView({ behavior: 'smooth' });
         }, [chatHistory]);
 
+        const handleClearChat = () => {
+          setChatHistory([]);
+        };
+
     return (
         <div className="chatbot">
           <div className="chat-head"> <img src="chatbott.png"/>  </div>
-            <div className="chat-window">
+            <div className="chat-window"> 
                 {chatHistory.map((message, index) => (
                     <div 
                         key={index}
@@ -65,9 +73,14 @@ function Chatbot(){
                 input.value = '';
             }}
             >
-
+              
               <input name="chat-input" type="text" placeholder="Ecrire quelque chose..." />
+              <div className="submit-button">
               <button type="submit" >Envoyer</button>
+              </div>
+              <div className="clear-button">
+                <button type="reset" onClick={handleClearChat}>Vider</button>
+              </div>
             </form>
         </div>
     );

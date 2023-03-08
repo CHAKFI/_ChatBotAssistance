@@ -69,17 +69,34 @@
     border: none;
     background-color: #007bff;
     color: #fff;
-    padding: 10px 20px;
+    padding: 8px 15px;
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
     font-family: 'Courier New', Courier, monospace;
+    margin-left: 98%;
   }
   
   button[type="submit"]:hover {
     background-color: #0062cc;
   }
   
+  button[type="reset"] {
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 23px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 38% ;
+    margin-left: 0%;
+  }
+  
+  button[type="reset"]:hover {
+    background-color: #0062cc;
+  }
   .chat-head {
     background-color: #f8f8f8;
     align-items: center;
