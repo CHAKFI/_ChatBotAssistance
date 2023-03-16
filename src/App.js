@@ -39,7 +39,7 @@ function App() {
                     <tr>
                     <td>4.</td>
                     <td>Demander leur rôle</td>
-                    <td>quel est votre rôle ? | comment pouvez vous m'aidez</td>
+                    <td>quel est votre rôle ? | comment pouvez vous m'aider ?</td>
                   </tr>
                   <tr>
                     <td>5.</td>

@@ -2,18 +2,20 @@
   /* text-align: center; */
 }
 
-.divi {
+/* .divi {
   background-color: #282c34;
   margin: 0;
   padding: 0;
   height: 100%; /* Full height */
-  overflow: auto;
+  /* overflow: auto;
   border-color: #04AA6D;
   border-style: double;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  text-align: center;
+  text-align: center; */
   /* font-size: 13px; */
-}
+/* }  */
+
+*/
 
 h1 {
   color: aquamarine;
@@ -100,4 +102,41 @@ td {
 .div-table {
   margin-left: 16%;
   margin-top: 29%;
+}
+
+
+.divi {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-color: #007bff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  /* background-image: url('process.env.PUBLIC_URL + "/AIBanner.png"'); */
+}
+
+.divi h1 {
+  font-size: 26px;
+  color: #21f4ff;
+  margin: 0;
+  letter-spacing: 2px;
+  /* font-weight: 600; */
+  transition: all 0.3s ease-in-out;
+}
+
+.divi h1:hover {
+  color: #9dff00;
+}
+
+.divi a {
+  font-size: 16px;
+  color: #555555;
+  text-decoration: none;
+  margin-right: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.divi a:hover {
+  color: #007bff;
 }

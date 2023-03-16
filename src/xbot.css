@@ -74,7 +74,7 @@
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
     font-family: 'Courier New', Courier, monospace;
-    margin-left: 98%;
+    margin-left: 1%;
   }
   
   button[type="submit"]:hover {
@@ -90,8 +90,7 @@
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
     font-family: 'Courier New', Courier, monospace;
-    margin-top: 38% ;
-    margin-left: 0%;
+    margin-left: 5%;
   }
   
   button[type="reset"]:hover {
