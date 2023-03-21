@@ -123,6 +123,7 @@ td {
   letter-spacing: 2px;
   /* font-weight: 600; */
   transition: all 0.3s ease-in-out;
+  font-family: Calibri,Candara,Segoe,Segoe UI,Optima; 
 }
 
 .divi h1:hover {
