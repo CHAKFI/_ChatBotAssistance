@@ -19,10 +19,12 @@
   }
   
   .message {
-    margin: 10px;
+    margin: 3px;
     padding: 8px;
-    border-radius: 5px;
-    max-width: 300px;
+    border-radius: 12px;
+    max-width: 300px;  
+    margin-left: 25px;
+    word-wrap: break-word;
   }
   
   .message-tex {
@@ -34,18 +36,27 @@
     font-size: 9px;
     margin-top: 5px;
   }
+
+  .user .message-timestamp{
+    margin-right: 20px;
+  }
   
   .user {
-    background-color: #ade8ff;
+    background-color: #5b6892;
     /* align-self: flex-end; */
     text-align: right;
+    border-bottom-right-radius: 40px;
+    border-top-left-radius: 40px;
+    color: white;
+    margin-top: 18px;
   }
   
   .bot {
-    background-color: #adf9d8;
+    background-color: #afafaf;
     /* align-self: flex-start; */
     text-align: left;
-
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 40px;
   }
   
   .input-form {
@@ -109,16 +120,22 @@
   }
 
   .bot-avatar{
+    float: left;
     content:url(C:\Users\ahmed\Documents\Github\Web\_ChatBotAssistance\public\chatbot.png);
-    width: 20px;
-    height: 20px;
-    
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    margin-right: 15px;
+    margin-bottom: 20px;
   }
 
   .user-avatar{
-    content:url(C:\Users\ahmed\Documents\Github\Web\_ChatBotAssistance\public\user.png);
-    width: 25px;
-    height: 25px;
-    display: -webkit-box;
-    margin-left: auto;
+    float: right;
+    content: url(C:\Users\ahmed\Documents\Github\Web\_ChatBotAssistance\public\user1.png);
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+    margin-bottom: 2%;
+
   }
