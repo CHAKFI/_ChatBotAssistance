@@ -18,4 +18,7 @@ React chatbot app that assist platform users and  collects contact informations.
 > First version : 
 ![v01](https://user-images.githubusercontent.com/36175107/223455557-00d5531b-6929-4b2b-8961-7e0d4dc80cc5.png)
 
+> Current version :
+![v02](https://user-images.githubusercontent.com/36175107/226861690-999b8c05-45f9-4b23-81da-d30f7a8d5f82.png)
+ 
  > Coming Soon... : 
