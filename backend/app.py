@@ -7,19 +7,14 @@ import json
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/pros')
+@app.route('/pros', methods=['GET', 'POST'])
 
 def chatbot():
-    data = request.get_json()
-    if not data or 'message' not in data:
-        return jsonify({'error': 'Invalide requ\ête de payload'}), 400
     
-    message = data['message']
-    response = generateResponse(message)
-    return jsonify({'message': response})
+    message = request.form.get('message')
 
-def generateResponse(message):
-    responseOptions = {
+    # handle the message and generate a response
+    responses = {
         'bonjour': ['Hey Bonjour!', 'Bonjour à vous !', 'Salut !', 'Bon matin !', 'Bonjour, comment ça va ?'],
         'salut': ['Hey Bonjour!', 'Bonjour à vous !', 'Salut !', 'Bon matin !', 'Bonjour, comment ça va ?'],
         'ça va ?': ['Je vais bien, merci.', 'Ça va bien, et vous ?', 'Je vais très bien, merci. Et vous-même ?','Je me porte bien, merci.','Je vais bien, merci pour demander. Et vous-même ?'],
@@ -31,14 +26,11 @@ def generateResponse(message):
         'au revoir': ['Goodbye!', 'Au revoir !', 'À bientôt !', 'À la prochaine !', 'À plus tard !','Prenez soin de vous !','On se voit bientôt !','À demain !'],
         'goodbye': ['Goodbye!', 'Au revoir !', 'À bientôt !', 'À la prochaine !', 'À plus tard !','Prenez soin de vous !','On se voit bientôt !','À demain !'],
     }
-
-    messageLower = message.lower()
-    if messageLower in responseOptions:
-        mssg = responseOptions[messageLower]
-        rdMessag = random.randint(0, len(mssg) - 1)
-        return f"{mssg[rdMessag]}"
+    if message in responses:
+        response = random.choice(response[message])
     else:
-        return "Désolé, je n'ai pas compris, Pouvez-vous essayer quelque chose d'autre ?"
+        response = "Désolé, je n'ai pas compris, pouvez-vous essayer quelque chose d'autre ?"
+    return jsonify({'message': response})
 
 @app.errorhandler(404)    
 def invalid_route(e): 
