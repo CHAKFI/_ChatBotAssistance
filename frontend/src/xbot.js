@@ -7,14 +7,21 @@ function Chatbot(){
     const chatWindowRef = useRef(null);
 
     const handleNewMessage = (message) => {
+
+        console.log("Message transmit via handleNewMessage method:", message); 
+
         // Send message to Flask server
         fetch('http://127.0.0.1:5000/pros', {
             method: 'POST',
-            body: JSON.stringify({ message }),
+            body: JSON.stringify({message}),
             headers: { 'Content-Type': 'application/json' },
         })
-        .then(response => response.json())
-        .then(data => {
+        .then(response => {
+          console.log("The Body: ",JSON.stringify({message}));
+          return response.json();
+         })
+        
+          .then(data => {
             // Add bot response to chat history
             const timestamp = new Date().toLocaleTimeString();
             setTimeout(() => {
@@ -22,7 +29,9 @@ function Chatbot(){
             }, 800);
         })
         .catch(error => {
-            console.error('Error sending message:', error);
+            console.error('Erreur de transmission du message:', error);
+            const timestamp = new Date().toLocaleTimeString();
+            setChatHistory(history => [...history, { sender: 'bot', text: 'Serveur Erreur {-_-}', timestamp }]);
         });
     };
 
@@ -68,10 +77,11 @@ function Chatbot(){
                 <div ref={chatWindowRef}></div>
             </div>
 
-            <form method='POST' className="input-form" onSubmit={(event) => {
+            <form className="input-form" onSubmit={(event) => {
                 event.preventDefault();
                 const input = event.target.elements['chat-input'];
                 const message = input.value.trim();
+                console.log('Message transmit via onSubmit method:', message);
                 if (message) {
                     // Add user message to chat history
                     const timestamp = new Date().toLocaleTimeString();

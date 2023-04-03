@@ -7,12 +7,9 @@ import json
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/pros', methods=['GET', 'POST'])
+@app.route('/pros', methods=['GET','POST'])
 
 def chatbot():
-    
-    message = request.form.get('message')
-
     # handle the message and generate a response
     responses = {
         'bonjour': ['Hey Bonjour!', 'Bonjour à vous !', 'Salut !', 'Bon matin !', 'Bonjour, comment ça va ?'],
@@ -26,15 +23,28 @@ def chatbot():
         'au revoir': ['Goodbye!', 'Au revoir !', 'À bientôt !', 'À la prochaine !', 'À plus tard !','Prenez soin de vous !','On se voit bientôt !','À demain !'],
         'goodbye': ['Goodbye!', 'Au revoir !', 'À bientôt !', 'À la prochaine !', 'À plus tard !','Prenez soin de vous !','On se voit bientôt !','À demain !'],
     }
-    if message in responses:
-        response = random.choice(response[message])
+
+    print("Received request:", request.data) # to check if Flask server is receiving the request
+
+    app.logger.info('Received request: %s', request)
+    data = request.get_json()
+    app.logger.info('Received message: %s', data)
+    message = data.get('message')
+
+    print("Received message:", message)
+
+    if not message:
+        response = 'Ce message ne peut pas être traité'
     else:
-        response = "Désolé, je n'ai pas compris, pouvez-vous essayer quelque chose d'autre ?"
+        if message in responses:
+            response = random.choice(responses[message])
+        else:
+            response = "Désolé, je n'ai pas compris, pouvez-vous essayer quelque chose d'autre ?"
     return jsonify({'message': response})
 
 @app.errorhandler(404)    
 def invalid_route(e): 
-    return "Invalid route AHMED (-_-)."
+    return "Invalid route (-_-)."
 
 if __name__ == '__main__':
     app.run(debug=True)
