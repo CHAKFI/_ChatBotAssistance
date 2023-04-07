@@ -8,9 +8,11 @@ React chatbot app that assist platform users and  collects contact informations.
 
 ## Technologies:
 
+> Frontend : 
 - **ReactJs**
-- **NodeJs**
-- **Redux**
+
+> Backend : 
+- **Flask API : Python**
 
 
 ## Screenshot:
