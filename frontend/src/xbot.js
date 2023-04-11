@@ -31,7 +31,9 @@ function Chatbot(){
         .catch(error => {
             console.error('Erreur de transmission du message:', error);
             const timestamp = new Date().toLocaleTimeString();
-            setChatHistory(history => [...history, { sender: 'bot', text: 'Serveur Erreur {-_-}', timestamp }]);
+            setTimeout(() => {
+                setChatHistory(history => [...history, { sender: 'bot', text: 'Serveur Erreur {-_-}', timestamp }]);
+            }, 1500);
         });
     };
 
