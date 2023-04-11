@@ -1,51 +1,56 @@
+import csv
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import random
-import requests
-import json
+import nltk
+from nltk.chat.util import Chat, reflections
+
 
 app = Flask(__name__)
 CORS(app)
 
 @app.route('/pros', methods=['GET','POST'])
-
 def chatbot():
 
     if request.method == 'GET':
         return render_template('run.html')
 
+    # load the data from CSV file
+    pairs = []
+    with open('C:/Users/ahmed/Documents/Github/Web/_ChatBotAssistance/data/chat.csv', 'r', encoding='ANSI') as f:
+        reader = csv.reader(f)
+        for row in reader:
+            if len(row) > 0:
+                elements = row[0].split(',')
+                if len(elements) >= 3:
+                    # Extracting nested elements from comma-separated values
+                    id = elements[0]
+                    user_message = elements[1].split(',')
+                    bot_response = elements[2]
+                    
+                    pairs.append([id, user_message, bot_response])
+    
     # handle the message and generate a response
-    responses = {
-        'bonjour': ['Hey Bonjour!', 'Bonjour à vous !', 'Salut !', 'Bon matin !', 'Bonjour, comment ça va ?'],
-        'salut': ['Hey Bonjour!', 'Bonjour à vous !', 'Salut !', 'Bon matin !', 'Bonjour, comment ça va ?'],
-        'ça va ?': ['Je vais bien, merci.', 'Ça va bien, et vous ?', 'Je vais très bien, merci. Et vous-même ?','Je me porte bien, merci.','Je vais bien, merci pour demander. Et vous-même ?'],
-        'comment allez-vous ?': ['Je vais bien, merci.', 'Ça va bien, et vous ?', 'Je vais très bien, merci. Et vous-même ?','Je me porte bien, merci.','Je vais bien, merci pour demander. Et vous-même ?'],
-        'je vais très bien': ['C\'est parfait ! N\'hésitez pas à me poser des questions si vous avez besoin d\'aide'],
-        'quel est votre nom ?': ['Je suis xbot!', 'je m\'appel xbot!', 'Mon nom est xbot', 'On m\'appelle xbot'],
-        'comment vous vous appelez ?': ['Je suis xbot!', 'je m\'appel xbot!', 'Mon nom est xbot', 'On m\'appelle xbot'],
-        'quel est votre rôle ?': ['Je peux vous aidez en répendant à votre questions', 'Je peux vous donnez des informations et des astuces', 'Mon rôle est de fournir un support client basé sur votre demandes', 'En tant qu\'un chatbot je suis votre assistant automatisée'],
-        'comment pouvez vous m\'aider ?' : ['Je peux vous aidez en répendant à votre questions', 'Je peux vous donnez des informations et des astuces', 'Mon rôle est de fournir un support client basé sur votre demandes', 'En tant qu\'un chatbot je suis votre assistant automatisée'],
-        'au revoir': ['Goodbye!', 'Au revoir !', 'À bientôt !', 'À la prochaine !', 'À plus tard !','Prenez soin de vous !','On se voit bientôt !','À demain !'],
-        'goodbye': ['Goodbye!', 'Au revoir !', 'À bientôt !', 'À la prochaine !', 'À plus tard !','Prenez soin de vous !','On se voit bientôt !','À demain !']
-    }
-
-    print("Received request:", request.data) # to check if Flask server is receiving the request
-
+    print("Received request:", request.data)
     app.logger.info('Received request: %s', request)
     data = request.get_json()
     app.logger.info('Received message: %s', data)
     message = data.get('message')
 
-    print("Received message:", message) # to check if Flask server is receiving the message
+    print("Received message:", message)
+    
 
+    # Find matching user message
+    matching_pairs = [pair for pair in pairs if user_message == pair[1]]
 
-    if not message:
-        response = 'Ce message ne peut pas être traité'
+    if matching_pairs:
+        # Select a random response
+        response =  random.choice(matching_pairs)[2]
+        
     else:
-        if message in responses:
-            response = random.choice(responses[message])
-        else:
-            response = "Désolé, je n'ai pas compris, pouvez-vous essayer quelque chose d'autre ?"
+        response = 'No response found for this message.'
+
+    print("bot response:", response)
     return jsonify({'message': response})
 
 @app.errorhandler(404)    
