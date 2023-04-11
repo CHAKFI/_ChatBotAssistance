@@ -1,5 +1,5 @@
 NUM,MESSAGE,RESPONSE
-"1,""hi,hello,good morning,salut,bonjour,hey"",""Hey Bonjour !,Bonjour à vous !,Salut !,Bon matin !,Bonjour ! Comment ça va ?"""
+"1,""bonjour,hi,hello,hey,salut,hola"",""Hey Bonjour !,Bonjour à vous !,Salut !,Bon matin !,Bonjour ! Comment ça va ?"""
 "2,""ça va,comment allez vous,"",""Je vais bien. Merci.,Ça va bien et vous ?,Je vais très bien merci. Et vous-même ?,Je me porte bien. Merci.,Je vais bien merci pour demander. Et vous-même ?"""
 "3,""très bien, je vais très bien,bien"",C'est parfait ! N'hésitez pas à me poser des questions si vous avez besoin d'aide."
 "4,""quel est votre nom, comment vous vous applez, nom,votre nom,qui êtes vous, vous êtes qui"",""Je suis xbot !,'je m'appel xbot !,Mon nom est xbot.,Il m'appelle xbot."""
