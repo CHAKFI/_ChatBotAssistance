@@ -33,7 +33,7 @@ function Chatbot(){
             const timestamp = new Date().toLocaleTimeString();
             setTimeout(() => {
                 setChatHistory(history => [...history, { sender: 'bot', text: 'Serveur Erreur {-_-}', timestamp }]);
-            }, 1500);
+            }, 1000);
         });
     };
 
