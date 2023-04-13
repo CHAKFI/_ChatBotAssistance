@@ -42,6 +42,7 @@ def chatbot():
     if not message:
         response = 'Ce message ne peut pas être traité'
     else:
+        message = message.lower()
         if message in responses:
             response = random.choice(responses[message])
         else:
