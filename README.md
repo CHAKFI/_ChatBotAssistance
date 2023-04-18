@@ -17,7 +17,7 @@ React chatbot app that assist platform users and collects contacts informations 
 > Data : 
 - **Machine & Deep Learning**
 
-## Screenshot:
+## Screenshots:
 
 > First version : 
 ![v01](https://user-images.githubusercontent.com/36175107/223455557-00d5531b-6929-4b2b-8961-7e0d4dc80cc5.png)
