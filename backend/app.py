@@ -2,9 +2,6 @@ import csv
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import random
-import nltk
-from nltk.chat.util import Chat, reflections
-
 
 app = Flask(__name__)
 CORS(app)
