@@ -1,10 +1,10 @@
-import csv
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import random
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
+
 
 app = Flask(__name__)
 CORS(app)
@@ -13,8 +13,16 @@ CORS(app)
 chat_data = pd.read_csv('C:/Users/ahmed/Documents/Github/Web/_ChatBotAssistance/data/chat.csv', encoding='ANSI')
 
 # Extract user messages and bot responses from chat data
-user_messages = chat_data['MESSAGE'].tolist()
-bot_responses = chat_data['RESPONSE'].tolist()
+user_messages = []
+bot_responses = []
+
+for i in range(len(chat_data)):
+    row = chat_data.iloc[i]
+    message = row['MESSAGE']
+    responses = row['RESPONSE'].split(',')
+    for response in responses:
+        user_messages.append(message)
+        bot_responses.append(response)
 
 # Train a simple Naive Bayes classifier
 vectorizer = CountVectorizer()
