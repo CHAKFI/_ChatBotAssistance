@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import random
+import re
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
@@ -47,8 +48,11 @@ def chatbot():
     if not message:
         response = 'Ce message ne peut pas être traité'
     else:
+        # preprocess the message to remove upper letters and special characters
+        message = re.sub(r'[^a-zA-Z0-9\s]', '', message)
+        message = message.lower()        
         # find all the rows in the chat_data dataframe that match the user's message
-        matching_rows = chat_data[chat_data['MESSAGE'] == message]
+        matching_rows = chat_data[chat_data['MESSAGE'].str.contains(message)]
 
         if len(matching_rows) > 0:
             # randomly select one of the corresponding bot responses
