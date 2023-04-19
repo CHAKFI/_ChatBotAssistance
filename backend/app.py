@@ -18,7 +18,7 @@ bot_responses = []
 
 for i in range(len(chat_data)):
     row = chat_data.iloc[i]
-    message = row['MESSAGE'].split(',')
+    message = row['MESSAGE']
     responses = row['RESPONSE'].split(',')
     for response in responses:
         user_messages.append(message)
