@@ -47,10 +47,12 @@ def chatbot():
     if not message:
         response = 'Ce message ne peut pas être traité'
     else:
-        X_message = vectorizer.transform([message])
-        predicted_response = clf.predict(X_message)
-        if predicted_response:
-            response = predicted_response[0]
+        # find all the rows in the chat_data dataframe that match the user's message
+        matching_rows = chat_data[chat_data['MESSAGE'] == message]
+
+        if len(matching_rows) > 0:
+            # randomly select one of the corresponding bot responses
+            response = random.choice(matching_rows['RESPONSE'].iloc[0].split(','))
         else:
             response = "Désolé, je n'ai pas compris, pouvez-vous essayer quelque chose d'autre ?"
     return jsonify({'message': response})
