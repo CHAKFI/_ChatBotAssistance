@@ -49,7 +49,7 @@ def chatbot():
         response = 'Ce message ne peut pas être traité'
     else:
         # preprocess the message to remove upper letters and special characters
-        message = re.sub(r'[^a-zA-Z0-9\s]', '', message)
+        message = re.sub(r'[^a-zA-Z0-9ôçéèàù@\s]', '', message)
         message = message.lower()        
         # find all the rows in the chat_data dataframe that match the user's message
         matching_rows = chat_data[chat_data['MESSAGE'].str.contains(message)]
