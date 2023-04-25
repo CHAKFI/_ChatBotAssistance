@@ -5,7 +5,7 @@ import re
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
-
+from waitress import serve
 
 app = Flask(__name__)
 CORS(app)
@@ -66,4 +66,4 @@ def invalid_route(e):
     return "Invalid route (-_-)."
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
