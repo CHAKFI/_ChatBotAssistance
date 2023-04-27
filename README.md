@@ -14,8 +14,8 @@ React chatbot app that assist platform users and collects contacts informations 
 > Backend : 
 - **Flask API : Python**
 
-> Data : 
-- **Machine & Deep Learning**
+> Data Training : 
+- **Machine & Deep Learning : Python**
 
 ## Screenshots:
 
