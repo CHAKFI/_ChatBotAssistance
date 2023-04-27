@@ -43,6 +43,7 @@ function Chatbot(){
 
     const handleClearChat = () => {
         setChatHistory([]);
+        
     };
 
     return (

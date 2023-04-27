@@ -10,8 +10,14 @@ function App() {
        <header className="App-header">
         <div>
           <Chatbot />
-        </div>      
-        <div className="div-table">
+          
+        </div> 
+        <p>Vas y !<br/>
+        Je suis votre assistant.
+        </p>
+
+        
+        {/* <div className="div-table">
               <table className="cmd-table">
                 <thead>
                   <tr>
@@ -48,7 +54,7 @@ function App() {
                   </tr>
                 </tbody>
               </table>
-        </div>  
+        </div>   */}
        </header>
     </div>
   );
