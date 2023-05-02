@@ -16,6 +16,7 @@ function Chatbot(){
             body: JSON.stringify({message}),
             headers: { 'Content-Type': 'application/json' },
         })
+
         .then(response => {
           console.log("The Body: ",JSON.stringify({message}));
           return response.json();
@@ -25,7 +26,7 @@ function Chatbot(){
             // Add bot response to chat history
             const timestamp = new Date().toLocaleTimeString();
             setTimeout(() => {
-              setChatHistory(history => [...history, { sender: 'bot', text: data.message, timestamp }]);
+                setChatHistory(history => [...history, { sender: 'bot', text: data.message, timestamp }]);
             }, 800);
         })
         .catch(error => {
@@ -43,7 +44,6 @@ function Chatbot(){
 
     const handleClearChat = () => {
         setChatHistory([]);
-        
     };
 
     return (

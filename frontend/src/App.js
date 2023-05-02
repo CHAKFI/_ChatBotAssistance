@@ -1,5 +1,5 @@
-import './App.css';
-import './xbot.css'
+import './styles/App.css';
+import './styles/xbot.css'
 import Chatbot from './xbot'
 
 function App() {
@@ -10,51 +10,10 @@ function App() {
        <header className="App-header">
         <div>
           <Chatbot />
-          
         </div> 
         <p>Vas y !<br/>
         Je suis votre assistant.
         </p>
-
-        
-        {/* <div className="div-table">
-              <table className="cmd-table">
-                <thead>
-                  <tr>
-                    <th>Num</th>
-                    <th>Type</th>
-                    <th>Commandes</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1.</td>
-                    <td>Salutation</td>
-                    <td>bonjour | salut</td>
-                  </tr>
-                  <tr>
-                    <td>2.</td>
-                    <td>Demander les nouvelles</td>
-                    <td>ça va ? | comment allez-vous ?</td>
-                  </tr>
-                  <tr>
-                    <td>3.</td>
-                    <td>Demander le nom</td>
-                    <td>quel est votre nom ? | comment vous vous appelez ?</td>
-                    </tr>
-                    <tr>
-                    <td>4.</td>
-                    <td>Demander leur rôle</td>
-                    <td>quel est votre rôle ? | comment pouvez vous m'aider ?</td>
-                  </tr>
-                  <tr>
-                    <td>5.</td>
-                    <td>Fin de conversation</td>
-                    <td>au revoir | goodbye</td>
-                  </tr>
-                </tbody>
-              </table>
-        </div>   */}
        </header>
     </div>
   );

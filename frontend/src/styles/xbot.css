@@ -23,7 +23,7 @@
     padding: 15px;
     border-radius: 12px;
     max-width: 410px;  
-    margin-left: 10px;
+    margin-left: 25px;
     word-wrap: break-word;
   }
   
@@ -137,4 +137,5 @@
     height: 30px;
     margin-left: 15px;
     margin-bottom: 2%;
+
   }
