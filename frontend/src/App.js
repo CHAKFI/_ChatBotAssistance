@@ -1,6 +1,7 @@
-import './styles/App.css';
+import './styles/App.css'
 import './styles/xbot.css'
 import Chatbot from './xbot'
+// import imgAnim from './animations/particles.js'
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <div>
           <Chatbot />
         </div> 
-        <p>Vas y !<br/>
+        <p>Vas-y !<br/>
         Je suis votre assistant.
         </p>
        </header>
